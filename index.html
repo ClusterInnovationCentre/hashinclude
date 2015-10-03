@@ -13,6 +13,7 @@
 
 	<link rel=stylesheet href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel=stylesheet href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel=stylesheet href="bower_components/css3-social-signin-buttons/auth-buttons.css">
 	<link rel=stylesheet href="css/styles.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -50,9 +51,19 @@
 				<!-- sidebar -->
 				<div class="column col-md-3 col-sm-12" id="sidebar">
 					<a class="logo" href="#">#</a>
+					<!-- TODO - Implement course and year selection -->
 					<ul class="nav">
-						<li class="active">
-							<a href="#register">Register</a>
+						<li>
+							<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login()">Register with <b>Facebook</b></a>
+						</li>
+						<li>
+							<a class="btn-auth btn-google" href="#" onclick="hello('google').login()">Register with <b>Google+</b></a>
+						</li>
+						<li>
+							<a class="btn-auth btn-github" href="#" onclick="hello('github').login()">Register with <b>GitHub</b></a>
+						</li>
+						<li>
+							<a class="btn-auth btn-windows" href="#" onclick="hello('windows').login()">Register with <b>Microsoft Account</b></a>
 						</li>
 					</ul>
 					<!-- <ul class="nav hidden-xs" id="sidebar-footer">
@@ -73,6 +84,7 @@
 	<script src="bower_components/typed.js/js/typed.js"></script>
 	<script src="js/github.js"></script>
 	-->
+	<script class="pre" src="bower_components/hello/dist/hello.all.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 </html>
