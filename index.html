@@ -52,20 +52,35 @@
 				<div class="column col-md-3 col-sm-12" id="sidebar">
 					<a class="logo" href="#">#</a>
 					<!-- TODO - Implement course and year selection -->
+					
+					<div class="row">
 					<ul class="nav">
 						<li>
-							<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login()">Register with <b>Facebook</b></a>
+							<div class="row">
+								<p class="field switch">
+									<input type="radio" id="mscme" name="field"  checked />
+									<input type="radio" id="humanities" name="field" />
+									<input type="radio" id="itmi" name="field">
+									<label for="mscme" class="mscme selected"><span>MSC-ME</span></label>
+									<label for="humanities" class="humanities"><span>Humanities</span></label>
+									<label for="itmi" class="itmi"><span>ITMI</span></label>
+								</p>
+							</div>
 						</li>
 						<li>
-							<a class="btn-auth btn-google" href="#" onclick="hello('google').login()">Register with <b>Google+</b></a>
+							<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login({scope: 'email'})">Register with <b>Facebook</b></a>
 						</li>
 						<li>
-							<a class="btn-auth btn-github" href="#" onclick="hello('github').login()">Register with <b>GitHub</b></a>
+							<a class="btn-auth btn-google" href="#" onclick="hello('google').login({scope: 'email'})">Register with <b>Google+</b></a>
 						</li>
 						<li>
-							<a class="btn-auth btn-windows" href="#" onclick="hello('windows').login()">Register with <b>Microsoft Account</b></a>
+							<a class="btn-auth btn-github" href="#" onclick="hello('github').login({scope: 'email'})">Register with <b>GitHub</b></a>
+						</li>
+						<li>
+							<a class="btn-auth btn-windows" href="#" onclick="hello('windows').login({scope: 'email'})">Register with <b>Microsoft Account</b></a>
 						</li>
 					</ul>
+					</div>
 					<!-- <ul class="nav hidden-xs" id="sidebar-footer">
 						<li>
 						  <a href="http://www.bootply.com"><h3>Basis</h3>Made with <i class="glyphicon glyphicon-heart-empty"></i> by Bootply</a>
