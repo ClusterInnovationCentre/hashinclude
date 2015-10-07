@@ -1,3 +1,20 @@
+// #include
+
+/*
+console.log('               ////         ////       ');
+console.log('              ////         ////        ');
+console.log('    ===============================    ');
+console.log('   ===============================     ');
+console.log('           ////         ////           ');
+console.log('          ////         ////            ');
+console.log(' ===============================       ');
+console.log('===============================        ');
+console.log('       ////         ////               ');
+console.log('      ////         ////                ');
+*/
+
+
+
 // Re-enable the below code for typind animation.
 
 /*$( document ).ready(function()
@@ -38,6 +55,8 @@
 }(window.jQuery);
 */
 
+localStorage.clear();
+sessionStorage.clear();
 hello.init({
 	facebook: '1634502443492240',
 	google: '615042929237-ephb8jem6h6q8vf83e6d0db50qi2dmrs.apps.googleusercontent.com',
@@ -46,14 +65,15 @@ hello.init({
 });
 
 hello.logout();
+
 hello.on('auth.login', function(auth) {
 
-	// TODO - Implement error handling while OAuth login.
-	
-	
+		
 	// Call user information, for the given network
 	hello(auth.network).api('/me').then(function(r) {
-
+		
+		// Authenticated succesfully.
+		
 		console.log("Network: " + auth.network + ", " + "User: " + r.name + ", " + "E-Mail: " + r.email + ", " + "Response dump: " + JSON.stringify(r) );
 
 		// Posting to the sheetsu API.
@@ -70,6 +90,7 @@ hello.on('auth.login', function(auth) {
 							data: {
 								name: r.name,
 								network: auth.network,
+								email: r.email,
 								course: "ITMI",
 								year: 3,
 								response_dump: JSON.stringify(r)
@@ -77,7 +98,7 @@ hello.on('auth.login', function(auth) {
 							dataType: 'json',
 							success: function(response) {
 								console.log(data);
-
+								console.log("User registered!!!");
 
 							}
 
@@ -85,17 +106,19 @@ hello.on('auth.login', function(auth) {
 					}
 					else
 					{
-						alert("User already registered.");
+						console.log("User already registered.");
 						// TODO - Implement showing previous registration.
 					}
 				}
 				else
 				{
-					alert("Unknown error occurred.");
+					console.log("Unknown error occurred.");
 					console.log(data);
 					// TODO - Implement error showing while connecting to the API.
 				}
 			})
+	}, function(e) {
+		console.log(e);
 	});
 
 	//TODO - Handle Error
