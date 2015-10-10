@@ -121,7 +121,6 @@ hello.on('auth.login', function(auth) {
 		console.log(e);
 	});
 
-	//TODO - Handle Error
 });
 
 $(document).ready( function(){
