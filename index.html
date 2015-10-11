@@ -14,11 +14,12 @@
 	<link rel=stylesheet href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel=stylesheet href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
 	<link rel=stylesheet href="bower_components/css3-social-signin-buttons/auth-buttons.css">
+	<link href="packages/mui-0.2.0-rc3/dist/css/mui.css" rel="stylesheet" type="text/css" />
 	<link rel=stylesheet href="css/styles.css">
 
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -35,9 +36,9 @@
 			  
 				<!-- main -->
 				<div class="column col-md-9 col-sm-12" id="main">
-					<div class="padding">
-						<div class="full col-sm-9 col-md-9">
-							<div class="row content-container pull-down">
+					<div class="padding column">
+						<div class="full col-sm-9 col-md-9 column">
+							<div class="row content-container pull-down column">
 								<div class="description">
 									<p>
 										Love computers? Mobile? Smartwatches? Those little amazing devices that connect to the Internet? Want to know how it all works? If the answer to any of those questions is yes, the come be a part of <span class="hashinclude">hashinclude</span> - the computer science society of the Cluster Innovation Centre. Whether you just want to show off your cool computer tricks to your friends or you want to create something awesome, this is place you want to be. Register to be a part of <span class="hashinclude">hashinclude</span> now!!!
@@ -54,36 +55,51 @@
 
 				<!-- sidebar -->
 				<div class="column col-md-3 col-sm-12" id="sidebar">
-					<a class="logo" href="#">#</a>
 					<!-- TODO - Implement course and year selection -->
 					
 					<div class="row">
-					<ul class="nav">
-						<li>
-							<div class="row">
-								<p class="field switch">
-									<input type="radio" id="mscme" name="field"  checked />
-									<input type="radio" id="humanities" name="field" />
-									<input type="radio" id="itmi" name="field">
-									<label for="mscme" class="mscme selected"><span>MSC-ME</span></label>
-									<label for="humanities" class="humanities"><span>Humanities</span></label>
-									<label for="itmi" class="itmi"><span>ITMI</span></label>
-								</p>
-							</div>
-						</li>
-						<li>
-							<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login({scope: 'email'})">Register with <b>Facebook</b></a>
-						</li>
-						<li>
-							<a class="btn-auth btn-google" href="#" onclick="hello('google').login({scope: 'email'})">Register with <b>Google+</b></a>
-						</li>
-						<li>
-							<a class="btn-auth btn-github" href="#" onclick="hello('github').login({scope: 'email'})">Register with <b>GitHub</b></a>
-						</li>
-						<li>
-							<a class="btn-auth btn-windows" href="#" onclick="hello('windows').login({scope: 'email'})">Register with <b>Microsoft Account</b></a>
-						</li>
-					</ul>
+						<ul class="nav">
+							<li>
+								<legend>Register</legend>
+								<div class="mui-select">
+									<select id="course">
+										<option>Course</option>
+										<option value="mscme">M. Sc. Mathematics Education</option>
+										<option value="humanities">B. A. (Humanities and Social Sciences)</option>
+										<option value="itmi">B. Tech. (ITMI)</option>
+									</select>
+								</div>
+								<div class="mui-select">
+									<select id="year">
+										<option>Year</option>
+										<option value="1">First</option>
+										<option value="2">Second</option>
+										<option value="3">Third</option>
+										<option value="4">Fourth</option>
+									</select>
+								</div>
+								<div class="mui-textfield">
+									<input type="text" class="mui-textfield__input" id="phone">
+									<label class="mui-textfield__label--floating">Phone</label>
+								</div>
+								<div class="mui-textfield">
+									<textarea class="mui-textfield__input" id="extra"></textarea>
+									<label class="mui-textfield__label--floating">Want to add more...</label>
+								</div>
+							</li>
+							<li>
+								<a class="btn-auth btn-facebook" href="#" onclick="hello('facebook').login({scope: 'email'})">Register with <b>Facebook</b></a>
+							</li>
+							<li>
+								<a class="btn-auth btn-google" href="#" onclick="hello('google').login({scope: 'email'})">Register with <b>Google+</b></a>
+							</li>
+							<li>
+								<a class="btn-auth btn-github" href="#" onclick="hello('github').login({scope: 'email'})">Register with <b>GitHub</b></a>
+							</li>
+							<li>
+								<a class="btn-auth btn-windows" href="#" onclick="hello('windows').login({scope: 'email'})">Register with <b>Microsoft Account</b></a>
+							</li>
+						</ul>
 					</div>
 					<!-- <ul class="nav hidden-xs" id="sidebar-footer">
 						<li>
@@ -99,10 +115,8 @@
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<!--
+	<script src="packages/mui-0.2.0-rc3/dist/js/mui.js"></script>
 	<script src="bower_components/typed.js/js/typed.js"></script>
-	<script src="js/github.js"></script>
-	-->
 	<script class="pre" src="bower_components/hello/dist/hello.all.js"></script>
 	<script src="js/scripts.js"></script>
 </body>

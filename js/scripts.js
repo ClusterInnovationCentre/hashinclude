@@ -17,14 +17,14 @@ console.log('      ////         ////                ');
 
 // Re-enable the below code for typind animation.
 
-/*$( document ).ready(function()
+$( document ).ready(function()
 {
 	$("#typed-title").typed(
 	{
 		strings: ["hash^1000", "#include"],
 		typeSpeed: 0
 	});
-});*/
+});
 
 // Code for pulling down elements. Not needed now.
 
@@ -54,6 +54,10 @@ console.log('      ////         ////                ');
 	});
 }(window.jQuery);
 */
+
+$('courseForm').submit(function() {
+  return false;
+});
 
 localStorage.clear();
 sessionStorage.clear();
@@ -91,8 +95,10 @@ hello.on('auth.login', function(auth) {
 								name: r.name,
 								network: auth.network,
 								email: r.email,
-								course: "ITMI",
-								year: 3,
+								course: $('#course').val(),
+								year: $('#course').val(),
+								phone: $('#phone').val(),
+								extra: $('#extra').val(),
 								response_dump: JSON.stringify(r)
 							},
 							dataType: 'json',
