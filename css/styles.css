@@ -44,7 +44,7 @@ body
 	display: table-cell;
 	vertical-align: bottom;
 	float: none;
-	background-color: rgba(128, 128, 128, 0.5);
+	background-color: transparent;
 }
 
 .description
@@ -53,6 +53,7 @@ body
 	background-color: transparent;
 	color: #fff;
 	text-align: justify;
+	font-family: "Open Sans, Helvetica Neue, Calibri";
 }
 
 .typed-container
@@ -226,4 +227,9 @@ small.text-muted {
 .btn-auth {
 	margin-top: 5px;
 	margin-bottom: 5px;
+}
+
+.label-hint {
+	font-size: smaller;
+	color: #888;
 }

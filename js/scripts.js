@@ -70,6 +70,15 @@ hello.init({
 
 hello.logout();
 
+function login(network) {
+	if ($('#course').val() === 'default' || $('#year').val() === 'default') {
+		alert('Please select course and year to continue !!!');
+	}
+	else{
+		hello(network).login({scope: 'email'});
+	}
+}
+
 hello.on('auth.login', function(auth) {
 
 		
@@ -86,7 +95,7 @@ hello.on('auth.login', function(auth) {
 				if(data.status === 200 && data.success === true)
 				{
 					console.log(data.result);
-					if(($.grep(data.result, function(e){ return e.network === auth.network && e.name === r.name })).length === 0)
+					if(($.grep(data.result, function(e){ return e.email === r.email })).length === 0)
 					{
 						$.ajax({
 							url: 'https://sheetsu.com/apis/ba75adb2',
@@ -104,7 +113,7 @@ hello.on('auth.login', function(auth) {
 							dataType: 'json',
 							success: function(response) {
 								console.log(data);
-								console.log("User registered!!!");
+								alert("Registered Successfully!");
 
 							}
 
@@ -113,12 +122,13 @@ hello.on('auth.login', function(auth) {
 					else
 					{
 						console.log("User already registered.");
+						alert("Already registered!")
 						// TODO - Implement showing previous registration.
 					}
 				}
 				else
 				{
-					console.log("Unknown error occurred.");
+					alert("Unknown error occurred!");
 					console.log(data);
 					// TODO - Implement error showing while connecting to the API.
 				}
@@ -129,17 +139,3 @@ hello.on('auth.login', function(auth) {
 
 });
 
-$(document).ready( function(){
-	$(".cb-enable").click(function(){
-		var parent = $(this).parents('.switch');
-		$('.cb-disable',parent).removeClass('selected');
-		$(this).addClass('selected');
-		$('.checkbox',parent).attr('checked', true);
-	});
-	$(".cb-disable").click(function(){
-		var parent = $(this).parents('.switch');
-		$('.cb-enable',parent).removeClass('selected');
-		$(this).addClass('selected');
-		$('.checkbox',parent).attr('checked', false);
-	});
-});
