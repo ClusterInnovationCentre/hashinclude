@@ -41,9 +41,7 @@ body
 .content-container
 {
 	width: 100%;
-	display: table-cell;
-	vertical-align: bottom;
-	float: none;
+	height: 100%;
 	background-color: transparent;
 }
 
@@ -53,19 +51,34 @@ body
 	background-color: transparent;
 	color: #fff;
 	text-align: justify;
-	font-family: "Open Sans, Helvetica Neue, Calibri";
+	position: relative;
+	vertical-align: bottom;
+	font-family: "Consolas, Inconsolata, Open Sans, Helvetica Neue, Calibri";
+}
+
+.description > p {
+	font-size: 1.2em;
+}
+
+#graph {
+    width: 100%;
+    height: auto;
+    margin: inherit;
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.png);
 }
 
 .typed-container
 {
-	padding: 10px;
-
+	padding: 5px;
+	position: absolute;
+	bottom: 0px;
 }
 
 .typed-container > h1
 {
 	font-family: "Consolas", "Ubuntu Mono", "Source Code Pro", "Monaco";
 	font-weight: 100;
+	font-size: 4em;
 }
 
 
@@ -126,7 +139,10 @@ a {
 }
 
 #main {
-	background-color:#343434;
+	background-image: linear-gradient(to bottom, rgba(100, 100, 100, 0.5) 0%, rgba(100, 100, 100, 0.5) 100%), url(../img/gh-graph-bg.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 }
 #main .img-circle {
   margin-top:18px;
