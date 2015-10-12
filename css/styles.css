@@ -10,10 +10,10 @@ body
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	color: #dddddd;
+	color: #000;
 	overflow: hidden;
 	height: 100%;
-	
+
 }
 
 .typed-cursor{
@@ -58,7 +58,7 @@ body
 .typed-container
 {
 	padding: 10px;
-	
+
 }
 
 .typed-container > h1
@@ -218,8 +218,9 @@ small.text-muted {
 	color: #dddddd;
 }
 
-option {
-	color: #ffffff;
+.mui-select > option :hover {
+	color: #000000;
+	background-color: #000000;
 }
 
 .btn-auth {
