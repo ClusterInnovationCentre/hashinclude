@@ -5,7 +5,7 @@ html
 
 body
 {
-	background-color: #ddd;
+	background-color: #999;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -59,13 +59,13 @@ body
 .description > p {
 	font-size: 1.2em;
 }
-
+/*
 #graph {
     width: 100%;
     height: auto;
     margin: inherit;
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.png);
-}
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.svg);
+}*/
 
 .typed-container
 {
@@ -79,6 +79,7 @@ body
 	font-family: "Consolas", "Ubuntu Mono", "Source Code Pro", "Monaco";
 	font-weight: 100;
 	font-size: 4em;
+	color: #dddddd;
 }
 
 
@@ -129,6 +130,12 @@ a {
 	position: absolute;
 	right: 0;
 	top: 0;
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.svg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+
 /*	background-image:url('../img/one.PNG');
 	background-size:cover;
 	background-attachment:fixed;*/
@@ -139,10 +146,11 @@ a {
 }
 
 #main {
-	background-image: linear-gradient(to bottom, rgba(100, 100, 100, 0.5) 0%, rgba(100, 100, 100, 0.5) 100%), url(../img/gh-graph-bg.png);
+/*	background-image: linear-gradient(to bottom, rgba(100, 100, 100, 0.5) 0%, rgba(100, 100, 100, 0.5) 100%), url(../img/gh-graph-bg.svg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	background-size: cover;*/
 }
 #main .img-circle {
   margin-top:18px;
@@ -153,6 +161,7 @@ a {
 #sidebar
 {
 	padding-top: 20px;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 #sidebar, #sidebar a {
