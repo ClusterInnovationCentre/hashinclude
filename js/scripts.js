@@ -21,12 +21,15 @@ $( document ).ready(function()
 {
 	$("#typed-title").typed(
 	{
-		strings: ["hash^1000", "#include"],
-		typeSpeed: 0
+		strings: ["hash", "^1000#^1000include"],
+		typeSpeed: 0.2,
+		startDelay: 4000,
+		backSpeed: 0.2,
+		backDelay: 2000
 	});
 });
 
-// Code for pulling down elements. Not needed now.
+// Code for pulling down elements. Not needed now. Not working anyway.
 
 /*!function ($) { //ensure $ always references jQuery
 	$(function () { //when dom has finished loading

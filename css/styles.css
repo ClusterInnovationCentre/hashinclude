@@ -13,7 +13,6 @@ body
 	color: #000;
 	overflow: hidden;
 	height: 100%;
-
 }
 
 .typed-cursor{
@@ -58,14 +57,14 @@ body
 
 .description > p {
 	font-size: 1.2em;
+	text-shadow:
+    -1px -1px 0 #000,
+    0px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    0px 1px 0 #000,
+    1px 1px 0 #000;
 }
-/*
-#graph {
-    width: 100%;
-    height: auto;
-    margin: inherit;
-    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.svg);
-}*/
 
 .typed-container
 {
@@ -130,15 +129,11 @@ a {
 	position: absolute;
 	right: 0;
 	top: 0;
-		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../img/gh-graph-bg.svg);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url(../img/gh-graph-bg.svg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
-
-/*	background-image:url('../img/one.PNG');
-	background-size:cover;
-	background-attachment:fixed;*/
 }
 
 .divider {
@@ -146,12 +141,9 @@ a {
 }
 
 #main {
-/*	background-image: linear-gradient(to bottom, rgba(100, 100, 100, 0.5) 0%, rgba(100, 100, 100, 0.5) 100%), url(../img/gh-graph-bg.svg);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;*/
+
 }
+
 #main .img-circle {
   margin-top:18px;
   height:70px;
@@ -257,4 +249,26 @@ small.text-muted {
 .label-hint {
 	font-size: smaller;
 	color: #888;
+}
+
+blockquote {
+  background: rgba(175, 175, 175, 0.2);
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: no-open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
 }
