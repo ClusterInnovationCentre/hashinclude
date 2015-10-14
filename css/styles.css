@@ -69,6 +69,7 @@ body
 .typed-container
 {
 	padding: 5px;
+	padding-bottom: 25px;
 	position: absolute;
 	bottom: 0px;
 }
@@ -244,6 +245,7 @@ small.text-muted {
 .btn-auth {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	border: none;
 }
 
 .label-hint {
@@ -271,4 +273,18 @@ blockquote:before {
 
 blockquote p {
   display: inline;
+}
+
+.hashinclude {
+	color: rgba(50, 200, 50, 0.8);
+}
+
+blockquote > a {
+	color: rgba(200, 200, 200, 0.8);
+	text-decoration: none;
+}
+
+blockquote > a:hover {
+	color: rgba(200, 200, 200, 0.8);
+	text-decoration: none;
 }
