@@ -72,6 +72,7 @@ body
 	padding-bottom: 25px;
 	position: absolute;
 	bottom: 0px;
+	display: inline-block;
 }
 
 .typed-container > h1
@@ -82,6 +83,11 @@ body
 	color: #dddddd;
 }
 
+legend > a {
+	display: inline;
+	position: absolute;
+	right: 0px;
+}
 
 /* move special fonts to HTML head for better performance */
 /*@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');*/
@@ -130,7 +136,7 @@ a {
 	position: absolute;
 	right: 0;
 	top: 0;
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url(../img/gh-graph-bg.svg);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url(../img/gh-graph-bg.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -164,14 +170,14 @@ a {
 }
 
 #sidebar a.logo {
-  display:block;
+  display: inline-block;
   padding:3px;
-  background-color:#fff;
-  color:#777777;
-  height:40px;
-  width:40px;
-  margin:15px;
-  font-size:26px;
+  background-color:#4862A3;
+  color:#cccccc;
+  height:32px;
+  width:32px;
+  margin: 0px;
+  font-size:21px;
   font-weight:700;
   text-align:center;
   text-decoration:none;
