@@ -22,9 +22,9 @@ $( document ).ready(function()
 	$("#typed-title").typed(
 	{
 		strings: ["hash", "^1000#^1000include"],
-		typeSpeed: 0.2,
-		startDelay: 4000,
-		backSpeed: 0.2,
+		typeSpeed: 0,
+		startDelay: 1000,
+		backSpeed: 0,
 		backDelay: 2000
 	});
 });
@@ -58,6 +58,22 @@ $( document ).ready(function()
 }(window.jQuery);
 */
 
+// Code to disable auth providers link.
+$(function() {
+    jQuery.fn.extend({
+        disable: function(state) {
+            return this.each(function() {
+                var $this = $(this);
+                $this.toggleClass('disabled', state);
+            });
+        }
+    });
+    
+    $('body').on('click', 'a.disabled', function(event) {
+        event.preventDefault();
+    });
+});
+
 $('courseForm').submit(function() {
   return false;
 });
@@ -74,6 +90,7 @@ hello.init({
 hello.logout();
 
 function login(network) {
+	$('a').disable(true);
 	if ($('#course').val() === 'default' || $('#year').val() === 'default') {
 		alert('Please select course and year to continue !!!');
 	}
@@ -117,7 +134,7 @@ hello.on('auth.login', function(auth) {
 							success: function(response) {
 								console.log(data);
 								alert("Registered Successfully!");
-
+								$('a').disable(false);
 							}
 
 						});
@@ -125,17 +142,19 @@ hello.on('auth.login', function(auth) {
 					else
 					{
 						console.log("User already registered.");
-						alert("Already registered!")
+						alert("Already registered!");
+						$('a').disable(false);
 						// TODO - Implement showing previous registration.
 					}
 				}
 				else
 				{
 					alert("Unknown error occurred!");
+					$('a').disable(false);
 					console.log(data);
 					// TODO - Implement error showing while connecting to the API.
 				}
-			})
+			});
 	}, function(e) {
 		console.log(e);
 	});
