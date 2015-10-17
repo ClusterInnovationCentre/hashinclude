@@ -93,6 +93,7 @@ function login(network) {
 	$('a').disable(true);
 	if ($('#course').val() === 'default' || $('#year').val() === 'default') {
 		alert('Please select course and year to continue !!!');
+		$('a').disable(false);
 	}
 	else{
 		hello(network).login({scope: 'email'});
