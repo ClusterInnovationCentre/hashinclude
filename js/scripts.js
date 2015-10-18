@@ -158,6 +158,7 @@ hello.on('auth.login', function(auth) {
 			});
 	}, function(e) {
 		console.log(e);
+		$('a').disable(true);
 	});
 
 });
