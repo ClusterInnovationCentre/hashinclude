@@ -60,22 +60,22 @@ $( document ).ready(function()
 
 // Code to disable auth providers link.
 $(function() {
-    jQuery.fn.extend({
-        disable: function(state) {
-            return this.each(function() {
-                var $this = $(this);
-                $this.toggleClass('disabled', state);
-            });
-        }
-    });
-    
-    $('body').on('click', 'a.disabled', function(event) {
-        event.preventDefault();
-    });
+	jQuery.fn.extend({
+		disable: function(state) {
+			return this.each(function() {
+				var $this = $(this);
+				$this.toggleClass('disabled', state);
+			});
+		}
+	});
+	
+	$('body').on('click', 'a.disabled', function(event) {
+		event.preventDefault();
+	});
 });
 
 $('courseForm').submit(function() {
-  return false;
+	return false;
 });
 
 localStorage.clear();
@@ -84,7 +84,8 @@ hello.init({
 	facebook: '1634502443492240',
 	google: '615042929237-ephb8jem6h6q8vf83e6d0db50qi2dmrs.apps.googleusercontent.com',
 	github: 'cdbd672cb7a4de29c76b',
-	windows: '000000004C168A78'
+	windows: '000000004C168A78',
+	twitter: 'Cz52zaO5jDkurNmZmSNxjQ5u2'
 });
 
 hello.logout();
@@ -102,7 +103,7 @@ function login(network) {
 
 hello.on('auth.login', function(auth) {
 
-		
+	
 	// Call user information, for the given network
 	hello(auth.network).api('/me').then(function(r) {
 		
@@ -156,10 +157,11 @@ hello.on('auth.login', function(auth) {
 					// TODO - Implement error showing while connecting to the API.
 				}
 			});
-	}, function(e) {
-		console.log(e);
-		$('a').disable(true);
-	});
+});
 
+}, function(e) {
+	alert('Unknown error occurred!!!');
+	console.log(e);
+	$('a').disable(true);
 });
 
