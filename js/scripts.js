@@ -68,7 +68,7 @@ $(function() {
 			});
 		}
 	});
-	
+
 	$('body').on('click', 'a.disabled', function(event) {
 		event.preventDefault();
 	});
@@ -84,8 +84,7 @@ hello.init({
 	facebook: '1634502443492240',
 	google: '615042929237-ephb8jem6h6q8vf83e6d0db50qi2dmrs.apps.googleusercontent.com',
 	github: 'cdbd672cb7a4de29c76b',
-	windows: '000000004C168A78',
-	twitter: 'Cz52zaO5jDkurNmZmSNxjQ5u2'
+	windows: '000000004C168A78'
 });
 
 hello.logout();
@@ -103,7 +102,7 @@ function login(network) {
 
 hello.on('auth.login', function(auth) {
 
-	
+
 	// Call user information, for the given network
 	hello(auth.network).api('/me').then(function(r) {
 		
