@@ -126,7 +126,7 @@ hello.on('auth.login', function(auth) {
 								network: auth.network,
 								email: r.email,
 								course: $('#course').val(),
-								year: $('#course').val(),
+								year: $('#year').val(),
 								phone: $('#phone').val(),
 								extra: $('#extra').val(),
 								response_dump: JSON.stringify(r)
