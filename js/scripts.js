@@ -22,7 +22,7 @@ $( document ).ready(function()
 	$("#typed-title").typed(
 	{
 		strings: ["hash", "^1000#^1000include"],
-		typeSpeed: 0,
+		typeSpeed: 90,
 		startDelay: 1000,
 		backSpeed: 0,
 		backDelay: 2000
@@ -109,55 +109,63 @@ hello.on('auth.login', function(auth) {
 		// Authenticated succesfully.
 		
 		console.log("Network: " + auth.network + ", " + "User: " + r.name + ", " + "E-Mail: " + r.email + ", " + "Response dump: " + JSON.stringify(r) );
-
-		// Posting to the sheetsu API.
-		$.get("https://sheetsu.com/apis/ba75adb2",
-			function( data ){
-				if(data.status === 200 && data.success === true)
-				{
-					console.log(data.result);
-					if(($.grep(data.result, function(e){ return e.email === r.email })).length === 0)
+		
+		// Check if email is available or not.
+		if (r.email != undefined)
+		{
+			// Posting to the sheetsu API.
+			$.get("https://sheetsu.com/apis/ba75adb2",
+				function( data ){
+					if(data.status === 200 && data.success === true)
 					{
-						$.ajax({
-							url: 'https://sheetsu.com/apis/ba75adb2',
-							type: 'post',
-							data: {
-								name: r.name,
-								network: auth.network,
-								email: r.email,
-								course: $('#course').val(),
-								year: $('#year').val(),
-								phone: $('#phone').val(),
-								extra: $('#extra').val(),
-								response_dump: JSON.stringify(r)
-							},
-							dataType: 'json',
-							success: function(response) {
-								console.log(data);
-								alert("Registered Successfully!");
-								$('a').disable(false);
-							}
+						console.log(data.result);
+						if(($.grep(data.result, function(e){ return e.email === r.email })).length === 0)
+						{
+							$.ajax({
+								url: 'https://sheetsu.com/apis/ba75adb2',
+								type: 'post',
+								data: {
+									name: r.name,
+									network: auth.network,
+									email: r.email,
+									course: $('#course').val(),
+									year: $('#year').val(),
+									phone: $('#phone').val(),
+									extra: $('#extra').val(),
+									response_dump: JSON.stringify(r)
+								},
+								dataType: 'json',
+								success: function(response) {
+									console.log(data);
+									alert("Registered Successfully!");
+									$('a').disable(false);
+								}
 
-						});
+							});
+						}
+						else
+						{
+							console.log("User already registered.");
+							alert("Already registered!");
+							$('a').disable(false);
+							// TODO - Implement showing previous registration.
+						}
 					}
 					else
 					{
-						console.log("User already registered.");
-						alert("Already registered!");
+						alert("Unknown error occurred!");
 						$('a').disable(false);
-						// TODO - Implement showing previous registration.
+						console.log(data);
+						// TODO - Implement error showing while connecting to the API.
 					}
-				}
-				else
-				{
-					alert("Unknown error occurred!");
-					$('a').disable(false);
-					console.log(data);
-					// TODO - Implement error showing while connecting to the API.
-				}
-			});
-});
-
+				});
+		}
+		else
+		{
+			alert("Unable to get e-mail ID, please check you profile or try a different provier!!!");
+		}
+	});
+		
 }, function(e) {
 	alert('Unknown error occurred!!!');
 	console.log(e);
