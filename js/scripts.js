@@ -29,35 +29,6 @@ $( document ).ready(function()
 	});
 });
 
-// Code for pulling down elements. Not needed now. Not working anyway.
-
-/*!function ($) { //ensure $ always references jQuery
-	$(function () { //when dom has finished loading
-		//make top text appear aligned to bottom: http://stackoverflow.com/questions/13841387/how-do-i-bottom-align-grid-elements-in-bootstrap-fluid-layout
-		function fixHeader() {
-			//for each element that is classed as 'pull-down'
-			//reset margin-top for all pull down items
-			$('.pull-down').each(function () {
-				$(this).css('margin-top', 0);
-			});
-
-			//set its margin-top to the difference between its own height and the height of its parent
-			$('.pull-down').each(function () {
-				if ($(window).innerWidth() >= 768) {
-					$(this).css('margin-top', $(this).parent().height() - $(this).height());
-				}
-			});
-		}
-
-		$(window).resize(function () {
-			fixHeader();
-		});
-
-		fixHeader();
-	});
-}(window.jQuery);
-*/
-
 // Code to disable auth providers link.
 $(function() {
 	jQuery.fn.extend({
@@ -77,6 +48,14 @@ $(function() {
 $('courseForm').submit(function() {
 	return false;
 });
+
+// Allow only numeric input 
+$(function() {
+  $('.mui-textfield').on('keydown', '#enroll', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
+})
+$(function() {
+  $('.mui-textfield').on('keydown', '#phone', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
+})
 
 localStorage.clear();
 sessionStorage.clear();
@@ -129,7 +108,7 @@ hello.on('auth.login', function(auth) {
 									network: auth.network,
 									email: r.email,
 									course: $('#course').val(),
-									year: $('#year').val(),
+									year: $('#enroll').val(),
 									phone: $('#phone').val(),
 									extra: $('#extra').val(),
 									response_dump: JSON.stringify(r)
