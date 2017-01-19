@@ -60,7 +60,7 @@ $(function() {
 localStorage.clear();
 sessionStorage.clear();
 hello.init({
-	facebook: '1634502443492240',
+	facebook: '182510688892833',
 	google: '615042929237-ephb8jem6h6q8vf83e6d0db50qi2dmrs.apps.googleusercontent.com',
 	github: 'cdbd672cb7a4de29c76b',
 	windows: '000000004C168A78'
