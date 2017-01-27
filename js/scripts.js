@@ -93,7 +93,7 @@ hello.on('auth.login', function(auth) {
 		if (r.email != undefined)
 		{
 			// Posting to the sheetsu API.
-			$.get("https://sheetsu.com/apis/v1.0/878b0e8dee9b",
+			$.get("http://ec2-35-166-100-124.us-west-2.compute.amazonaws.com/",
 				function( data ){
 					if(data.status === 200 && data.success === true)
 					{
@@ -101,14 +101,14 @@ hello.on('auth.login', function(auth) {
 						if(($.grep(data.result, function(e){ return e.email === r.email })).length === 0)
 						{
 							$.ajax({
-								url: 'https://sheetsu.com/apis/v1.0/878b0e8dee9b',
+								url: 'http://ec2-35-166-100-124.us-west-2.compute.amazonaws.com/register',
 								type: 'post',
 								data: {
 									name: r.name,
 									network: auth.network,
 									email: r.email,
 									course: $('#course').val(),
-									year: $('#enroll').val(),
+									roll_number: $('#enroll').val(),
 									phone: $('#phone').val(),
 									extra: $('#extra').val(),
 									response_dump: JSON.stringify(r)
