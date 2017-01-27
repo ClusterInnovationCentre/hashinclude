@@ -93,7 +93,7 @@ hello.on('auth.login', function(auth) {
 		if (r.email != undefined)
 		{
 			// Posting to the sheetsu API.
-			$.get("https://sheetsu.com/apis/ba75adb2",
+			$.get("https://sheetsu.com/apis/v1.0/878b0e8dee9b",
 				function( data ){
 					if(data.status === 200 && data.success === true)
 					{
@@ -101,7 +101,7 @@ hello.on('auth.login', function(auth) {
 						if(($.grep(data.result, function(e){ return e.email === r.email })).length === 0)
 						{
 							$.ajax({
-								url: 'https://sheetsu.com/apis/ba75adb2',
+								url: 'https://sheetsu.com/apis/v1.0/878b0e8dee9b',
 								type: 'post',
 								data: {
 									name: r.name,
